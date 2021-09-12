@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  width: 100vw;
+  background-color: #4056a1;
+  color: #ffffff;
+  padding: 1.5em;
+}
+
+#logo {
+  font-family: Bungee;
+}
+
+.newTweet {
+  display: flex;
+  flex-direction: column;
+}
+
+.newTweet i {
+  align-self: center;
+  color: red;
+}
