@@ -26,3 +26,10 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+main {
+  display: flex;
+  padding: 0% 5%;
+  justify-content: center;
+  align-content: center;
+  background-color: silver;
+}
