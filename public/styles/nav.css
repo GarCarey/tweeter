@@ -13,12 +13,12 @@ nav {
   font-family: Bungee;
 }
 
-.newTweet {
+.writeTweet {
   display: flex;
   flex-direction: column;
 }
 
-.newTweet i {
+.writeTweet i {
   align-self: center;
   color: red;
 }
