@@ -15,19 +15,21 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span id="logo">Tweeter</span>
-      <div class="newTweet">
+      <div class="writeTweet">
         <span><b>Write</b> a new tweet</span>
         <i class="fas fa-angle-double-down"></i>
       </div>
@@ -44,10 +46,18 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis facilisis sem eu egestas. Proin vulputate sem metus. Duis vel euismod erat. Pellentesque quis eleifend leo, ut fringilla lacus. Aliquam sollicitudin pellentesque elit et aliquet. Sed eget vulputate nibh. Suspendisse feugiat, dui eu tristique porta, odio diam rutrum nibh, non vulputate leo quam rhoncus nulla. Vestibulum et est suscipit, porttitor neque vehicula, vestibulum ante. Ut iaculis leo quis posuere pellentesque. Pellentesque malesuada sem eu porta tempus.
-      </p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
-    
+
   </body>
 </html>
