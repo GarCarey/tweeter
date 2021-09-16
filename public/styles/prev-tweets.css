@@ -1,0 +1,49 @@
+.prev-tweets {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: solid black;
+  padding: 1em;
+  transition: box-shadow 0.3s;
+}
+
+.prev-tweets:hover {
+  box-shadow: 5px 10px;
+}
+
+.prev-tweets header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.prev-tweets footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5vw;
+  border-top: solid black;
+}
+
+#users {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#handle {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#avi {
+  height: 60px;
+  width: 60px;
+}
+
+#socialBadges i:hover {
+  color: goldenrod;
+}
