@@ -4,11 +4,17 @@ main {
   background-color: silver;
 }
 
+.new-tweet {
+  width: 100%;
+  padding: 1em;
+}
+
 .new-tweet form {
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  padding-left: 10vw;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
 }
 
 .new-tweet button {
@@ -17,7 +23,7 @@ main {
   background-color: #4056a1;
 }
 
-.new-tweet div {
+.new-tweet div.enter-tweet {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
