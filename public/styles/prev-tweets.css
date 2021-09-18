@@ -4,6 +4,7 @@
   width: 100%;
   border: solid black;
   padding: 1em;
+  margin-bottom: 1em;
   transition: box-shadow 0.3s;
 }
 
