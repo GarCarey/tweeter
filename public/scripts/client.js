@@ -61,6 +61,18 @@ $(document).ready(function() {
     return $tweet
   }
 
-renderTweets(data);
+  renderTweets(data);
+
+  $("form").submit(function (event) {
+    event.preventDefault();
+  
+    $.ajax ({
+      url: "/tweets",
+      type: "POST",
+      data: $('form').serialize()
+    })
+
+  })
 
 });
+
