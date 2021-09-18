@@ -38,6 +38,16 @@ $(document).ready(function() {
 
   $("form").submit(function (event) {
     event.preventDefault();
+
+    const tweetLength = $('#tweet-text').val().length;
+
+    if (tweetLength > 140) {
+      return alert("Tweet cannot be longer than 140 characters!");
+    }
+
+    if (tweetLength < 1 ) {
+      return alert ("Tweet cannot be blank!");
+    } 
   
     $.ajax ({
       url: "/tweets",
