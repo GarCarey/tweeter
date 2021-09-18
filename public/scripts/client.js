@@ -5,6 +5,12 @@
  */
 $(document).ready(function() {
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const renderTweets = (tweets) => {
     tweets.forEach(singleTweet => {
       const $tweet = createTweetElement(singleTweet);
@@ -22,7 +28,7 @@ $(document).ready(function() {
         </div>
         <label id="handle" for="user-handle">${tweet.user.handle}</label>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
       <footer>
         ${tweet.created_at}
         <div id="socialBadges">
@@ -53,18 +59,20 @@ $(document).ready(function() {
       url: "/tweets",
       type: "POST",
       data: $('form').serialize()
+    }).then(() => {
+      loadTweets();
     })
 
   })
 
   const loadTweets = () => {
-    $.ajax ("/tweets", {
+    $.ajax ({
+      url: "/tweets",
       method: "GET",
     }). then(function (tweets) {
       renderTweets(tweets);
     })
   }
-
   loadTweets();
 
 });
