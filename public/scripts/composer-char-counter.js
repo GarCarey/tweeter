@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log("Script on!");
 
-  $('.new-tweet textarea').on('keypress', function() {
+  $('.new-tweet textarea').on('input', function() {
     const charCounter = $(this).val().length;
     let remainingChars = `${140 - charCounter}`;
 
