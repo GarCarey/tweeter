@@ -48,18 +48,29 @@ $(document).ready(function() {
     const tweetLength = $('#tweet-text').val().length;
 
     if (tweetLength > 140) {
-      return alert("Tweet cannot be longer than 140 characters!");
+      $(".error-holder")
+        .slideDown("slow")
+        .append("<span class=error-message>Tweet cannot be longer than 140 character!</span>")
+        return;
     }
 
     if (tweetLength < 1 ) {
-      return alert ("Tweet cannot be blank!");
+      $(".error-holder")
+      .slideDown("slow")
+      .append("<span class=error-message>Tweet cannot be blank!</span>")
+      return;
     } 
+
+    if (tweetLength > 0 && tweetLength <= 140) {
+      $(".error-holder").empty()
+    }
   
     $.ajax ({
       url: "/tweets",
       type: "POST",
       data: $('form').serialize()
     }).then(() => {
+      $("#tweet-text").val('');
       loadTweets();
     })
 
