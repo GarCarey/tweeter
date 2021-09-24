@@ -37,3 +37,9 @@ textarea {
   border-style: none;
   border-bottom: solid;
 }
+
+.new-tweet .error-holder .error-message {
+  width: 15%;
+  color: red;
+  border: solid red 5px;
+}
