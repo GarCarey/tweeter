@@ -9,6 +9,8 @@ $(document).ready(function() {
     
     if (remainingChars < 0 ) {
       $(counterView).css("color", "red");
+    } else {
+      $(counterView).css("color", "#545149");
     }
   })
 });
