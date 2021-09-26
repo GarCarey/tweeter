@@ -5,7 +5,7 @@
  */
 $(document).ready(function() {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -16,7 +16,7 @@ $(document).ready(function() {
       const $tweet = createTweetElement(singleTweet);
       $('#old-tweets').prepend($tweet);
     });
-  }
+  };
 
   const createTweetElement = function(tweet) {
     let $tweet = $(`
@@ -39,10 +39,10 @@ $(document).ready(function() {
       </footer>
     </article>
     `);
-    return $tweet
-  }
+    return $tweet;
+  };
 
-  $("form").submit(function (event) {
+  $("form").submit(function(event) {
     event.preventDefault();
 
     const tweetLength = $('#tweet-text').val().length;
@@ -50,40 +50,40 @@ $(document).ready(function() {
     if (tweetLength > 140) {
       $(".error-holder")
         .slideDown("slow")
-        .append("<span class=error-message>Tweet cannot be longer than 140 character!</span>")
-        return;
+        .append("<span class=error-message>Tweet cannot be longer than 140 character!</span>");
+      return;
     }
 
-    if (tweetLength < 1 ) {
+    if (tweetLength < 1) {
       $(".error-holder")
-      .slideDown("slow")
-      .append("<span class=error-message>Tweet cannot be blank!</span>")
+        .slideDown("slow")
+        .append("<span class=error-message>Tweet cannot be blank!</span>");
       return;
-    } 
+    }
 
     if (tweetLength > 0 && tweetLength <= 140) {
-      $(".error-holder").empty()
+      $(".error-holder").empty();
     }
   
-    $.ajax ({
+    $.ajax({
       url: "/tweets",
       type: "POST",
       data: $('form').serialize()
     }).then(() => {
       $("#tweet-text").val('');
       loadTweets();
-    })
+    });
 
-  })
+  });
 
   const loadTweets = () => {
-    $.ajax ({
+    $.ajax({
       url: "/tweets",
       method: "GET",
-    }). then(function (tweets) {
+    }). then(function(tweets) {
       renderTweets(tweets);
-    })
-  }
+    });
+  };
   loadTweets();
 
 });
