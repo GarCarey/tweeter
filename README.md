@@ -1,5 +1,7 @@
 # Tweeter Project
 
+### _Created by Gareth Carey_
+
 Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
@@ -13,5 +15,15 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
+- Body-parser
+- Chance
 - Express
+- Md5
+- Timeago
 - Node 5.10.x or above
+
+## Final Product
+
+Tweeter will allow a users enter new tweets up to 140 characters that will be added to their timeline as well as showing previous tweets.
+
+Tweeter has been styled using CSS stylesheets and will allow the user to seamlessly move between mobile and desktop views.
