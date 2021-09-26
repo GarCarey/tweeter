@@ -27,3 +27,7 @@ This repository is the starter code for the project: Students will fork and clon
 Tweeter will allow a users enter new tweets up to 140 characters that will be added to their timeline as well as showing previous tweets.
 
 Tweeter has been styled using CSS stylesheets and will allow the user to seamlessly move between mobile and desktop views.
+
+!["screenshot of home screen"](https://github.com/GarCarey/tweeter/blob/master/docs/home-screen.png)
+!["screenshot of error message"](https://github.com/GarCarey/tweeter/blob/master/docs/error-message.png)
+!["screenshot of mobile view"](https://github.com/GarCarey/tweeter/blob/master/docs/mobile-view.png)
