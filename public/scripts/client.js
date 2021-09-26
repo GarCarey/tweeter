@@ -12,14 +12,6 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  //pull multiple tweets from DB and add them as single tweet
-  const renderTweets = (tweets) => {
-    tweets.forEach(singleTweet => {
-      const $tweet = createTweetElement(singleTweet);
-      $('#old-tweets').prepend($tweet);
-    });
-  };
-
   //function to add a single tweet
   const createTweetElement = function(tweet) {
     let $tweet = $(`
@@ -45,6 +37,25 @@ $(document).ready(function() {
     return $tweet;
   };
 
+   //pull multiple tweets from DB and add them as single tweet
+   const renderTweets = (tweets) => {
+    $('#old-tweets').empty();
+    tweets.forEach(singleTweet => {
+      const $tweet = createTweetElement(singleTweet);
+      $('#old-tweets').prepend($tweet);
+    });
+  };
+
+  const loadTweets = () => {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+    }). then(function(tweets) {
+      renderTweets(tweets);
+    });
+  };
+  loadTweets();
+
   // JQuery event method that uses AJAX to post tweets
   $("form").submit(function(event) {
     event.preventDefault();
@@ -55,6 +66,9 @@ $(document).ready(function() {
       $(".error-holder")
         .slideDown("slow")
         .append("<span class=error-message>Tweet cannot be longer than 140 character!</span>");
+      setTimeout(function(){
+          $(".error-holder").hide();
+      }, 2000);
       return;
     }
 
@@ -62,6 +76,9 @@ $(document).ready(function() {
       $(".error-holder")
         .slideDown("slow")
         .append("<span class=error-message>Tweet cannot be blank!</span>");
+      setTimeout(function(){
+        $(".error-holder").hide();
+      }, 2000);
       return;
     }
 
@@ -80,16 +97,6 @@ $(document).ready(function() {
     });
 
   });
-
-  const loadTweets = () => {
-    $.ajax({
-      url: "/tweets",
-      method: "GET",
-    }). then(function(tweets) {
-      renderTweets(tweets);
-    });
-  };
-  loadTweets();
 
 });
 
