@@ -30,7 +30,7 @@ $(document).ready(function() {
       </header>
       <p>${escape(tweet.content.text)}</p>
       <footer>
-        ${tweet.created_at}
+        <span class="time">${timeago.format(tweet.created_at)}</span>
         <div id="socialBadges">
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
