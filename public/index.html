@@ -37,6 +37,7 @@
       </div>
     </nav>
     <div id=content>
+      <!-- Header with name + image -->
       <header id="main-header">
         <div>
           <img src="/images/profile-hex.png">
@@ -50,6 +51,7 @@
       <!-- Page-specific (main) content here -->
       <main class="container">
         <section class="new-tweet">
+          <!-- shows error messages -->
           <p class="error-holder"></p>
           <form action="/tweets/" method="POST">
             <label for="tweet-text">What are you humming about?</label>
@@ -60,6 +62,7 @@
             </div>
           </form>
         </section>
+        <!--shows posted tweets-->
         <section id="old-tweets"></section>
       </main>
     </div>
