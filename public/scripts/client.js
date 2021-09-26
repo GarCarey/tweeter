@@ -5,12 +5,14 @@
  */
 $(document).ready(function() {
 
+  // to prevent XSS
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  //pull multiple tweets from DB and add them as single tweet
   const renderTweets = (tweets) => {
     tweets.forEach(singleTweet => {
       const $tweet = createTweetElement(singleTweet);
@@ -18,6 +20,7 @@ $(document).ready(function() {
     });
   };
 
+  //function to add a single tweet
   const createTweetElement = function(tweet) {
     let $tweet = $(`
     <article class="prev-tweets">
@@ -42,6 +45,7 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // JQuery event method that uses AJAX to post tweets
   $("form").submit(function(event) {
     event.preventDefault();
 
