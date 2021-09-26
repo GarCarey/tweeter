@@ -7,10 +7,10 @@ $(document).ready(function() {
 
     let counterView = $(".counter").text(remainingChars);
     
-    if (remainingChars < 0 ) {
+    if (remainingChars < 0) {
       $(counterView).css("color", "red");
     } else {
       $(counterView).css("color", "#545149");
     }
-  })
+  });
 });
